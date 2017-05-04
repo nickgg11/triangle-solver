@@ -3,6 +3,8 @@ package trig;
 public class Trig {
 
 	public double sinLawSide(double A, double a, double B){
+		A=Math.toRadians(A);
+		B=Math.toRadians(B);
 		
 	}
 	
