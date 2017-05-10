@@ -7,7 +7,7 @@ public class test {
 		Trig triggered=new Trig();
 		int choice=0;
 		do{
-			System.out.println("Choose which math you want to do\n1. Sine Law for a side length\n2. Sine law for an angle\n3. Cosine law for a side length\n4. Cosine law for an angle");
+			System.out.println("\nChoose which math you want to do\n1. Sine Law for a side length\n2. Sine law for an angle\n3. Cosine law for a side length\n4. Cosine law for an angle\n5. Solve full Triangle");
 			Scanner in= new Scanner(System.in);
 			choice=in.nextInt();
 			double A,a,B,b,c,area;
@@ -23,7 +23,7 @@ public class test {
 			}
 			else if (choice==2)
 			{
-				
+
 				System.out.println("\nGive me one angle and two lengths: ");
 				A=in.nextDouble();
 				b=in.nextDouble();
@@ -33,7 +33,7 @@ public class test {
 			}
 			else if (choice==3)
 			{
-				
+
 				System.out.println("\nGive me one angle and two lengths: ");
 				A=in.nextDouble();
 				b=in.nextDouble();
@@ -50,8 +50,37 @@ public class test {
 				area=triggered.cosLawAngle(a,b,c);
 				System.out.format("The answer is %,.02f.",area);
 			}
+			else if (choice==5)
+			{
+				System.out.println("Okay input your sides and angles, put zeros for no value");
+				System.out.println("side a");
+				a=in.nextInt();
+				System.out.println("side b");
+				b=in.nextInt();
+				System.out.println("side c");
+				c=in.nextInt();
+				System.out.println("angle A");
+				A=in.nextInt();
+				System.out.println("angle B");
+				B=in.nextInt();
+				System.out.println("angle C");
+				double C=in.nextInt();
+				if (a>=1&&A>=1&&B>=1)
+				{
+					b=triggered.sinLawSide(A,a,B);
+					C=180-(A+B);
+					double savea=a;
+					double saveb=b;
+					c=triggered.sinLawSide(A,a,C);
+					double savec=c;
+//					System.out.println(savea+", "+saveb+", "+savec+", "+A+", "+B+", "+C);
+					System.out.format("%.02f, %.02f, %.02f, %.0f, %.0f, %.0f", savea, saveb, savec, A, B, C);
+				}
+
+			}
 		}
-		while(choice==1||choice==2||choice==3||choice==4);
+		while(choice==1||choice==2||choice==3||choice==4||choice==5);
+		System.out.println("YOU LEFT NOW YOU HAVE TO START AGAIN.");
 	}
 }
 
