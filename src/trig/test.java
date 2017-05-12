@@ -2,10 +2,19 @@ package trig;
 import java.util.Scanner;
 public class test {
 
+	public double sides2Angles1(double a, double b, double A)	{
+		Trig triggered=new Trig();
+		double B=triggered.cosLawAngle(a, b, A);
+		double C=180-A-B;
+		double c=triggered.sinLawSide(A ,a ,B);
+		System.out.println("angles are"+A+" , "+B+" , "+C+" , The side lengths are "+a+" , "+b+" , "+c);
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Trig triggered=new Trig();
 		int choice=0;
+		
 		do{
 			System.out.println("\nChoose which math you want to do\n1. Sine Law for a side length\n2. Sine law for an angle\n3. Cosine law for a side length\n4. Cosine law for an angle\n5. Solve full Triangle");
 			Scanner in= new Scanner(System.in);
@@ -65,20 +74,9 @@ public class test {
 				B=in.nextInt();
 				System.out.println("angle C");
 				double C=in.nextInt();
-				if (a>=1&&A>=1&&B>=1)
-				{
-					b=triggered.sinLawSide(A,a,B);
-					C=180-(A+B);
-					double savea=a;
-					double saveb=b;
-					c=triggered.sinLawSide(A,a,C);
-					double savec=c;
-//					System.out.println(savea+", "+saveb+", "+savec+", "+A+", "+B+", "+C);
-					System.out.format("%.02f, %.02f, %.02f, %.0f, %.0f, %.0f", savea, saveb, savec, A, B, C);
-				}
-
+				 Sides2Angles1;
 			}
-		}
+			}
 		while(choice==1||choice==2||choice==3||choice==4||choice==5);
 		System.out.println("YOU LEFT NOW YOU HAVE TO START AGAIN.");
 	}

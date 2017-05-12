@@ -1,7 +1,6 @@
 package trig;
 
 public class Trig {
-
 	public double toRad (double A)
 	{
 		return A * Math.PI / 180;
@@ -21,17 +20,17 @@ public class Trig {
 	public double sinLawAngle(double A, double a, double b)
 	{
 		A = toRad(A);
-		return toDeg(a * Math.sin(Math.sin(A) * b / a));
+		return toDeg(Math.asin(Math.sin(A) * b / a));
 	}
 
 	public double cosLawSide(double A, double b, double c)
 	{
 		A = toRad(A);
-		return Math.sqrt(Math.pow(b, 2) + Math.pow(c, 2) - (2 * b * c * Math.cos(A)));
+		return Math.sqrt (Math.pow(b, 2) + Math.pow(c, 2)- (2 * b * c * Math.cos(A)));
 	}
 
 	public double cosLawAngle(double a, double b, double c)
 	{
-		return toDeg( a * Math.cos((Math.pow(a, 2) - Math.pow(b, 2) - Math.pow(c, 2)) / (-2 * b * c)));
+		return toDeg( Math.acos((Math.pow(a, 2) - Math.pow(b, 2) - Math.pow(c, 2)) / (-2 * b * c)));
 	}
 }
